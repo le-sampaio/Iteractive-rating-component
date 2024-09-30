@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./imagens/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Interactive rating component</title>
+</head>
+<body>
+    
+    <div class="main">
+        <img class="star" src="./imagens/icon-star.svg" alt="icon-star">
+        <p class="title">How did we do?</p>
+        <p class="text">Please let us know how we did with your support request.
+             All feddback is appreciated to help us improve our offering!
+            </p>
+                <div>
+                    <input type="button" value="1" id="btn1" onclick="selecionarValor(this)">
+                    <input type="button" value="2" id="btn2" onclick="selecionarValor(this)">
+                    <input type="button" value="3" id="btn3" onclick="selecionarValor(this)">
+                    <input type="button" value="4" id="btn4" onclick="selecionarValor(this)">
+                    <input type="button" value="5" id="btn5" onclick="selecionarValor(this)">    
+                </div>
+     
+
+            <input id="btn-submit" type="button" value="SUBMIT" onclick="clicar()">
+
+
+    <script>
+        let valorSelecionado = null
+
+        function selecionarValor(button){
+            valorSelecionado = button.value
+        }
+
+        function clicar(){
+
+            if(valorSelecionado){
+                document.body.innerHTML = `
+                <div class='main'>
+                    <img class="cellphone" src="./imagens/illustration-thank-you.svg" alt="thank-you-icon">
+                    <p class="rating">You selected ${valorSelecionado} out of 5</p>
+                    <p class='thk-mensage'>Thank you!</p>
+                    <p class="mini-text">We appreciate you taking the time to give a rating.If you ever need more support, dont hesitate to get in touch!</p>  
+                </div>
+                `
+            }
+        }
+    </script>
+</body>
+</html>
